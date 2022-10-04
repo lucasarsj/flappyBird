@@ -1,101 +1,58 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-
-body {
-    background-color: dodgerblue;
-}
-
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
-    padding-bottom: 40px;
-}
-
-
-h1 {
-    font-size: 3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    font-style: italic;
-    text-shadow: 2px 2px white;
-}
-
-
-main {
+[wm-flappy] {
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
     margin: auto;
-    height: 640px;
-    width: 1100px;
-    border: 3px solid white;
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
-    
-    background-image: url(img/scenery.png);
+    background-image: url(/img/scenery.png);
     background-size: cover;
+    overflow: hidden;
 }
 
-
-
-
-
-#flappy {
+.passaro {
     position: absolute;
-    height: 65px;
-    bottom: 42%;
-    left: calc(50% - 25px);
+    width: 60px;
+    left: calc(50% - 30px);
 }
 
-
-
-h3 {
+.par-de-barreiras {
     position: absolute;
-    right: 15%;
-    font-size: 3rem;
-    color: white;
-}
-
-.pipes {
-    position: absolute;
+    top: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    width: 70px;
-    animation-name: move-pipes;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    
+    justify-content: space-between;
 }
 
-
-
-#upper-pipe,
-#down-pipe {
-    height: 267px;
-    
-    background-color: black;
+.barreira {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
-
-@keyframes move-pipes {
-    0% { 
-        right: 0%;
-    }
-
- 
-
-
-    to {
-        right: 100%;
-    }
+.barreira .borda {
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #a5eb2e );
+    border: 2px solid;
 }
 
- 
+.barreira .corpo {
+    height: 40px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #a5eb2e);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.progresso {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 70px;
+    z-index: 100;
+}
